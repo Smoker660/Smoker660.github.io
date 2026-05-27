@@ -9,92 +9,158 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+      font-family: "Helvetica Neue", "Segoe UI", "Inter", Arial, sans-serif;
       line-height: 1.7;
-      color: #2c3e50;
-      background: #fefefe;
+      color: #32294d;
+      background: #faf8fd;
     }
-    a { color: #2c6faa; text-decoration: none; transition: color 0.2s; }
-    a:hover { color: #1a4f7e; }
+    a { color: #7c3aed; text-decoration: none; transition: all 0.2s; }
+    a:hover { color: #5b21b6; }
 
     /* ===== Navigation ===== */
     .nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e8ecf1;
+      background: rgba(250,248,253,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #ede4f5;
       padding: 0 2rem;
     }
     .nav-inner {
-      max-width: 960px; margin: 0 auto;
+      max-width: 920px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
       height: 56px;
     }
-    .nav-name { font-weight: 600; font-size: 1.05rem; color: #1a1a1a; }
+    .nav-name {
+      font-weight: 700; font-size: 1.05rem;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .nav-links { display: flex; gap: 1.75rem; list-style: none; }
-    .nav-links a { font-size: 0.9rem; color: #555; font-weight: 500; }
-    .nav-links a:hover { color: #2c6faa; }
+    .nav-links a { font-size: 0.9rem; color: #6d5c8a; font-weight: 500; }
+    .nav-links a:hover { color: #7c3aed; }
 
     /* ===== Layout ===== */
-    .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+    .container { max-width: 880px; margin: 0 auto; padding: 0 2rem; }
 
     /* ===== Hero ===== */
+    .hero-section {
+      padding: 6rem 0 2.5rem;
+      background: linear-gradient(160deg, #f5f0ff 0%, #ede4fd 40%, #faf8fd 100%);
+      border-bottom: 1px solid #ede4f5;
+      margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);
+      padding-left: calc(50vw - 50%); padding-right: calc(50vw - 50%);
+    }
+    .hero-section .container { padding: 0 2rem; }
     .hero {
-      padding: 7rem 0 3rem;
       display: flex; align-items: flex-start; gap: 2.5rem;
     }
     .hero-avatar {
-      width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
-      background: #e8ecf1; flex-shrink: 0;
+      width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+      background: linear-gradient(135deg, #c4b5fd, #a78bfa, #8b5cf6);
+      flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      font-size: 3rem; color: #aaa;
+      font-size: 3.2rem; color: #fff;
+      box-shadow: 0 4px 24px rgba(124,58,237,0.2);
     }
-    .hero-text h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.25rem; }
-    .hero-text .subtitle { font-size: 1.05rem; color: #666; margin-bottom: 0.5rem; }
-    .hero-text .affiliation { font-size: 0.95rem; color: #777; margin-bottom: 0.3rem; }
-    .hero-links { display: flex; gap: 1rem; margin-top: 0.75rem; flex-wrap: wrap; }
+    .hero-text h1 {
+      font-size: 2.1rem; font-weight: 750; color: #2d1b4e;
+      margin-bottom: 0.2rem; letter-spacing: -0.02em;
+    }
+    .hero-text .subtitle { font-size: 1.05rem; color: #7c3aed; font-weight: 500; margin-bottom: 0.5rem; }
+    .hero-text .affiliation { font-size: 0.95rem; color: #6d5c8a; margin-bottom: 0.3rem; line-height: 1.6; }
+    .hero-links { display: flex; gap: 0.75rem; margin-top: 0.85rem; flex-wrap: wrap; }
     .hero-links a {
       display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.85rem; color: #555; padding: 0.25rem 0.75rem;
-      border: 1px solid #ddd; border-radius: 20px; transition: all 0.2s;
+      font-size: 0.84rem; color: #5b21b6; padding: 0.3rem 0.9rem;
+      border: 1.5px solid #c4b5fd; border-radius: 20px; transition: all 0.25s;
+      background: rgba(255,255,255,0.6);
     }
-    .hero-links a:hover { border-color: #2c6faa; color: #2c6faa; background: #f5f9fd; }
+    .hero-links a:hover {
+      border-color: #7c3aed; color: #fff;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      box-shadow: 0 2px 12px rgba(124,58,237,0.25);
+    }
+
+    .hero-bio {
+      max-width: 620px; color: #4a3a65; font-size: 0.95rem; margin-top: 1.5rem;
+    }
 
     /* ===== Sections ===== */
-    section { padding: 2.5rem 0; border-top: 1px solid #eef1f5; }
+    section { padding: 2.8rem 0; border-top: 1px solid #ede4f5; }
     section:first-of-type { border-top: none; }
-    .section-title { font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1.5rem; }
+    .section-title {
+      font-size: 1.25rem; font-weight: 700; color: #2d1b4e;
+      margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;
+    }
+    .section-title::before {
+      content: ""; display: inline-block;
+      width: 4px; height: 1.3em;
+      background: linear-gradient(180deg, #7c3aed, #a855f7);
+      border-radius: 2px;
+    }
 
-    /* ===== Education & Experience Items ===== */
+    /* ===== Cards ===== */
+    .card {
+      background: #fff;
+      border: 1px solid #ede4f5;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .card:last-child { margin-bottom: 0; }
+    .card:hover {
+      box-shadow: 0 4px 24px rgba(124,58,237,0.08);
+      transform: translateY(-1px);
+    }
+
+    /* ===== Items ===== */
     .item { margin-bottom: 1.75rem; }
     .item:last-child { margin-bottom: 0; }
     .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.25rem; }
-    .item-title { font-weight: 600; font-size: 1rem; color: #1a1a1a; }
-    .item-date { font-size: 0.85rem; color: #999; white-space: nowrap; }
-    .item-subtitle { font-size: 0.9rem; color: #666; margin-bottom: 0.35rem; }
-    .item-desc { font-size: 0.9rem; color: #444; }
+    .item-title { font-weight: 650; font-size: 1rem; color: #2d1b4e; }
+    .item-date {
+      font-size: 0.8rem; color: #a78bfa; white-space: nowrap;
+      background: #f5f0ff; padding: 0.15rem 0.65rem; border-radius: 12px;
+      font-weight: 500;
+    }
+    .item-subtitle { font-size: 0.9rem; color: #6d5c8a; margin-bottom: 0.4rem; }
+    .item-desc { font-size: 0.9rem; color: #4a3a65; }
     .item-desc ul { padding-left: 1.25rem; }
-    .item-desc li { margin-bottom: 0.25rem; }
+    .item-desc li { margin-bottom: 0.3rem; }
+    .item-desc li::marker { color: #a78bfa; }
 
     /* ===== Skills ===== */
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .skill-tag {
-      font-size: 0.85rem; padding: 0.3rem 0.9rem;
-      background: #f3f6fa; border-radius: 20px; color: #3a5a7c;
+      font-size: 0.85rem; padding: 0.35rem 1rem;
+      border-radius: 20px; font-weight: 500;
+      background: linear-gradient(135deg, #f5f0ff, #ede4fd);
+      color: #5b21b6;
+      transition: all 0.2s;
+    }
+    .skill-tag:hover {
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: #fff; cursor: default;
     }
 
     /* ===== Patent ===== */
     .patent-box {
-      background: #f9fafb; border: 1px solid #e8ecf1; border-radius: 8px;
-      padding: 1.25rem 1.5rem;
+      background: linear-gradient(135deg, #fdfbff, #f5f0ff);
+      border: 1.5px solid #c4b5fd;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
     }
     .patent-box .item-title { font-size: 0.95rem; }
-    .patent-meta { font-size: 0.8rem; color: #888; margin-top: 0.5rem; }
+    .patent-meta { font-size: 0.8rem; color: #8b7aa8; margin-top: 0.5rem; }
 
     /* ===== Footer ===== */
     footer {
-      text-align: center; padding: 2.5rem 0; border-top: 1px solid #eef1f5;
-      font-size: 0.8rem; color: #aaa;
+      text-align: center; padding: 2.5rem 0;
+      border-top: 1px solid #ede4f5;
+      font-size: 0.8rem; color: #aa9bbd;
+      background: linear-gradient(180deg, #faf8fd, #f5f0ff);
     }
 
     /* ===== Mobile ===== */
@@ -104,6 +170,7 @@
       .nav-links { gap: 1rem; }
       .nav-links a { font-size: 0.8rem; }
       .item-header { flex-direction: column; }
+      .hero-section { padding: 5rem 0 2rem; }
     }
   </style>
 </head>
@@ -122,13 +189,12 @@
   </div>
 </nav>
 
-<main class="container">
-
-  <!-- Hero / About -->
-  <section id="about">
-    <div class="hero">
+<!-- Hero -->
+<div class="hero-section">
+  <div class="container">
+    <div id="about" class="hero">
       <!-- Replace src with your photo -->
-      <div class="hero-avatar" aria-label="Profile photo placeholder">👤</div>
+      <div class="hero-avatar" aria-label="Profile photo placeholder">&#128104;&#8205;&#127891;</div>
       <div class="hero-text">
         <h1>Bohan Wang</h1>
         <p class="subtitle">Undergraduate Student — Financial Mathematics</p>
@@ -138,25 +204,28 @@
         </p>
         <div class="hero-links">
           <a href="mailto:3077242053@qq.com">&#9993; Email</a>
-          <a href="#" target="_blank">&#128209; CV / Resume</a>
-          <!-- Add more: Google Scholar, GitHub, LinkedIn, etc. -->
+          <a href="#">&#128209; CV</a>
+          <!-- Add: Google Scholar, GitHub, LinkedIn, etc. -->
         </div>
       </div>
     </div>
-    <p style="max-width: 640px; color: #444; font-size: 0.95rem;">
+    <p class="hero-bio">
       I am an undergraduate student in Financial Mathematics at Tongji University, with research interests in
       quantitative modeling, carbon market mechanisms, and machine learning for policy analysis. I enjoy
       bridging mathematical rigor with real-world problems in environmental economics and energy systems.
     </p>
-  </section>
+  </div>
+</div>
+
+<main class="container">
 
   <!-- Education -->
   <section id="education">
     <h2 class="section-title">Education</h2>
-    <div class="item">
+    <div class="card">
       <div class="item-header">
         <span class="item-title">B.S. in Financial Mathematics (Double Degree Program)</span>
-        <span class="item-date">Aug. 2024 – Jun. 2028 (Expected)</span>
+        <span class="item-date">Aug. 2024 – Jun. 2028</span>
       </div>
       <p class="item-subtitle">Tongji University, Shanghai, China</p>
       <div class="item-desc">
@@ -169,7 +238,7 @@
   <!-- Research -->
   <section id="research">
     <h2 class="section-title">Research Experience</h2>
-    <div class="item">
+    <div class="card">
       <div class="item-header">
         <span class="item-title">Global Carbon Market Comprehensive Assessment &amp; Idealized Framework Design</span>
         <span class="item-date">Feb. 2025 – Mar. 2026</span>
@@ -208,7 +277,7 @@
   <!-- Experience -->
   <section id="experience">
     <h2 class="section-title">Professional &amp; Campus Experience</h2>
-    <div class="item">
+    <div class="card">
       <div class="item-header">
         <span class="item-title">Financial Technology Intern — Ningxia Bank Head Office</span>
         <span class="item-date">Jan. 2026 – Mar. 2026</span>
@@ -222,7 +291,7 @@
         </ul>
       </div>
     </div>
-    <div class="item">
+    <div class="card">
       <div class="item-header">
         <span class="item-title">Member &amp; National Level-3 Football Referee — Tongji University Football Association</span>
         <span class="item-date">Sep. 2024 – Present</span>
@@ -239,23 +308,25 @@
   <!-- Skills & Languages -->
   <section id="skills">
     <h2 class="section-title">Skills &amp; Languages</h2>
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="font-size: 0.95rem; font-weight: 600; color: #555; margin-bottom: 0.6rem;">Technical</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">LaTeX</span>
-        <span class="skill-tag">R</span>
-        <span class="skill-tag">Excel (Advanced)</span>
-        <span class="skill-tag">Quantitative Modeling</span>
-        <span class="skill-tag">Data Cleaning &amp; Analysis</span>
-        <span class="skill-tag">Machine Learning</span>
+    <div class="card">
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 0.92rem; font-weight: 650; color: #5b21b6; margin-bottom: 0.6rem;">Technical</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">LaTeX</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">Excel (Advanced)</span>
+          <span class="skill-tag">Quantitative Modeling</span>
+          <span class="skill-tag">Data Cleaning &amp; Analysis</span>
+          <span class="skill-tag">Machine Learning</span>
+        </div>
       </div>
-    </div>
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="font-size: 0.95rem; font-weight: 600; color: #555; margin-bottom: 0.6rem;">Languages</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Mandarin Chinese (Native)</span>
-        <span class="skill-tag">English — TOEFL 5.0/6.0</span>
+      <div>
+        <h3 style="font-size: 0.92rem; font-weight: 650; color: #5b21b6; margin-bottom: 0.6rem;">Languages</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Mandarin Chinese (Native)</span>
+          <span class="skill-tag">English — TOEFL 5.0/6.0</span>
+        </div>
       </div>
     </div>
   </section>
@@ -263,7 +334,7 @@
 </main>
 
 <footer>
-  <p>&copy; 2026 Bohan Wang. All rights reserved.</p>
+  <p>&copy; 2026 Bohan Wang</p>
 </footer>
 
 </body>
