@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bohan Wang — Personal Homepage</title>
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+      color: #2c3e50;
+      background: #fefefe;
+    }
+    a { color: #2c6faa; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #1a4f7e; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e8ecf1;
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-name { font-weight: 600; font-size: 1.05rem; color: #1a1a1a; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; color: #555; font-weight: 500; }
+    .nav-links a:hover { color: #2c6faa; }
+
+    /* ===== Layout ===== */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ===== Hero ===== */
+    .hero {
+      padding: 7rem 0 3rem;
+      display: flex; align-items: flex-start; gap: 2.5rem;
+    }
+    .hero-avatar {
+      width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
+      background: #e8ecf1; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; color: #aaa;
+    }
+    .hero-text h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.25rem; }
+    .hero-text .subtitle { font-size: 1.05rem; color: #666; margin-bottom: 0.5rem; }
+    .hero-text .affiliation { font-size: 0.95rem; color: #777; margin-bottom: 0.3rem; }
+    .hero-links { display: flex; gap: 1rem; margin-top: 0.75rem; flex-wrap: wrap; }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.85rem; color: #555; padding: 0.25rem 0.75rem;
+      border: 1px solid #ddd; border-radius: 20px; transition: all 0.2s;
+    }
+    .hero-links a:hover { border-color: #2c6faa; color: #2c6faa; background: #f5f9fd; }
+
+    /* ===== Sections ===== */
+    section { padding: 2.5rem 0; border-top: 1px solid #eef1f5; }
+    section:first-of-type { border-top: none; }
+    .section-title { font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1.5rem; }
+
+    /* ===== Education & Experience Items ===== */
+    .item { margin-bottom: 1.75rem; }
+    .item:last-child { margin-bottom: 0; }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.25rem; }
+    .item-title { font-weight: 600; font-size: 1rem; color: #1a1a1a; }
+    .item-date { font-size: 0.85rem; color: #999; white-space: nowrap; }
+    .item-subtitle { font-size: 0.9rem; color: #666; margin-bottom: 0.35rem; }
+    .item-desc { font-size: 0.9rem; color: #444; }
+    .item-desc ul { padding-left: 1.25rem; }
+    .item-desc li { margin-bottom: 0.25rem; }
+
+    /* ===== Skills ===== */
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      font-size: 0.85rem; padding: 0.3rem 0.9rem;
+      background: #f3f6fa; border-radius: 20px; color: #3a5a7c;
+    }
+
+    /* ===== Patent ===== */
+    .patent-box {
+      background: #f9fafb; border: 1px solid #e8ecf1; border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+    }
+    .patent-box .item-title { font-size: 0.95rem; }
+    .patent-meta { font-size: 0.8rem; color: #888; margin-top: 0.5rem; }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center; padding: 2.5rem 0; border-top: 1px solid #eef1f5;
+      font-size: 0.8rem; color: #aaa;
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 640px) {
+      .hero { flex-direction: column; align-items: center; text-align: center; }
+      .hero-text h1 { font-size: 1.6rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
+      .item-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Bohan Wang</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- Hero / About -->
+  <section id="about">
+    <div class="hero">
+      <!-- Replace src with your photo -->
+      <div class="hero-avatar" aria-label="Profile photo placeholder">👤</div>
+      <div class="hero-text">
+        <h1>Bohan Wang</h1>
+        <p class="subtitle">Undergraduate Student — Financial Mathematics</p>
+        <p class="affiliation">
+          School of Mathematical Sciences, Tongji University<br>
+          Shanghai, China
+        </p>
+        <div class="hero-links">
+          <a href="mailto:3077242053@qq.com">&#9993; Email</a>
+          <a href="#" target="_blank">&#128209; CV / Resume</a>
+          <!-- Add more: Google Scholar, GitHub, LinkedIn, etc. -->
+        </div>
+      </div>
+    </div>
+    <p style="max-width: 640px; color: #444; font-size: 0.95rem;">
+      I am an undergraduate student in Financial Mathematics at Tongji University, with research interests in
+      quantitative modeling, carbon market mechanisms, and machine learning for policy analysis. I enjoy
+      bridging mathematical rigor with real-world problems in environmental economics and energy systems.
+    </p>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">B.S. in Financial Mathematics (Double Degree Program)</span>
+        <span class="item-date">Aug. 2024 – Jun. 2028 (Expected)</span>
+      </div>
+      <p class="item-subtitle">Tongji University, Shanghai, China</p>
+      <div class="item-desc">
+        <p><strong>Relevant Coursework:</strong> Stochastic Processes, Econometrics, Financial Derivatives,
+        Mathematical Statistics, Data Structures &amp; Algorithms, Linear Algebra</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section id="research">
+    <h2 class="section-title">Research Experience</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Global Carbon Market Comprehensive Assessment &amp; Idealized Framework Design</span>
+        <span class="item-date">Feb. 2025 – Mar. 2026</span>
+      </div>
+      <p class="item-subtitle">Research Assistant — School of Environmental Science &amp; Engineering, Tongji University
+      <br>Supervisor: Prof. Bin Xu</p>
+      <div class="item-desc">
+        <ul>
+          <li>Independently shouldered all research responsibilities after initial team withdrawal; completed the project through final defense.</li>
+          <li>Collected, cleaned, and structured large-scale cross-national datasets covering major Emissions Trading Systems (EU ETS, California Cap-and-Trade, China National ETS, RGGI, and others).</li>
+          <li>Conducted comparative policy analysis of carbon allowance mechanisms across 10+ economies, evaluating emission-reduction efficiency, market liquidity, and price discovery performance.</li>
+          <li>Built a quantitative idealized carbon market framework (Carbon AI) incorporating mathematical modeling and machine learning for carbon price forecasting.</li>
+          <li>Authored multiple interim progress reports and the full mid-term review; delivered a well-received final defense presentation before expert reviewers.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intellectual Property -->
+  <section id="patents">
+    <h2 class="section-title">Intellectual Property</h2>
+    <div class="patent-box">
+      <div class="item-header">
+        <span class="item-title">"A Method and Equipment for Hierarchical Coordinated Control of Active and Reactive Power in New Energy Stations"</span>
+        <span class="item-date">2026</span>
+      </div>
+      <p class="patent-meta">
+        Invention Patent (Accepted) · Application No. 202610462312.7 · National Intellectual Property Administration of China
+      </p>
+      <div class="item-desc" style="margin-top: 0.5rem;">
+        Contributed to algorithm design and simulation verification of the hierarchical active/reactive power coordination scheme; authored the patent application materials.
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2 class="section-title">Professional &amp; Campus Experience</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Financial Technology Intern — Ningxia Bank Head Office</span>
+        <span class="item-date">Jan. 2026 – Mar. 2026</span>
+      </div>
+      <p class="item-subtitle">FinTech Department</p>
+      <div class="item-desc">
+        <ul>
+          <li>Assisted in building an internal AI-powered knowledge base Q&A system using the Dify platform.</li>
+          <li>Cleaned and structured financial policy documents, credit product materials, and regulatory texts to improve knowledge retrieval accuracy.</li>
+          <li>Supported pilot deployment of AI tools across internal business scenarios, improving employee information query efficiency.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Member &amp; National Level-3 Football Referee — Tongji University Football Association</span>
+        <span class="item-date">Sep. 2024 – Present</span>
+      </div>
+      <div class="item-desc">
+        <ul>
+          <li>Officiated on-campus match events; responsible for rule interpretation and real-time decision-making under pressure.</li>
+          <li>Participated in event organization and coordination.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Languages -->
+  <section id="skills">
+    <h2 class="section-title">Skills &amp; Languages</h2>
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 0.95rem; font-weight: 600; color: #555; margin-bottom: 0.6rem;">Technical</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">LaTeX</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">Excel (Advanced)</span>
+        <span class="skill-tag">Quantitative Modeling</span>
+        <span class="skill-tag">Data Cleaning &amp; Analysis</span>
+        <span class="skill-tag">Machine Learning</span>
+      </div>
+    </div>
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 0.95rem; font-weight: 600; color: #555; margin-bottom: 0.6rem;">Languages</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Mandarin Chinese (Native)</span>
+        <span class="skill-tag">English — TOEFL 5.0/6.0</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Bohan Wang. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
