@@ -3,300 +3,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bohan Wang — Personal Homepage</title>
+  <title>Bohan Wang — Tongji University</title>
   <style>
     /* ===== Reset & Base ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Helvetica Neue", "Segoe UI", "Inter", Arial, sans-serif;
-      line-height: 1.7;
-      color: #32294d;
-      background: #faf8fd;
+      font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #222;
+      background: #fff;
     }
-    a { color: #7c3aed; text-decoration: none; transition: all 0.2s; }
-    a:hover { color: #5b21b6; }
 
     /* ===== Navigation ===== */
     .nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(250,248,253,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #ede4f5;
-      padding: 0 2rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e8e8e8;
+      font-size: 14px;
     }
     .nav-inner {
-      max-width: 920px; margin: 0 auto;
+      max-width: 780px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
+      height: 48px; padding: 0 20px;
     }
-    .nav-name {
-      font-weight: 700; font-size: 1.05rem;
-      background: linear-gradient(135deg, #7c3aed, #a855f7);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
-    .nav-links a { font-size: 0.9rem; color: #6d5c8a; font-weight: 500; }
+    .nav-name { font-weight: 650; color: #111; }
+    .nav-links { display: flex; gap: 22px; list-style: none; }
+    .nav-links a { color: #666; text-decoration: none; }
     .nav-links a:hover { color: #7c3aed; }
 
     /* ===== Layout ===== */
-    .container { max-width: 880px; margin: 0 auto; padding: 0 2rem; }
+    .wrapper { max-width: 780px; margin: 0 auto; padding: 0 20px; }
 
     /* ===== Hero ===== */
-    .hero-section {
-      padding: 6rem 0 2.5rem;
-      background: linear-gradient(160deg, #f5f0ff 0%, #ede4fd 40%, #faf8fd 100%);
-      border-bottom: 1px solid #ede4f5;
-      margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);
-      padding-left: calc(50vw - 50%); padding-right: calc(50vw - 50%);
-    }
-    .hero-section .container { padding: 0 2rem; }
-    .hero {
-      display: flex; align-items: flex-start; gap: 2.5rem;
-    }
-    .hero-avatar {
-      width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
-      background: linear-gradient(135deg, #c4b5fd, #a78bfa, #8b5cf6);
-      flex-shrink: 0;
+    .hero { padding: 80px 0 36px; display: flex; gap: 28px; align-items: flex-start; }
+    .hero-photo {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      flex-shrink: 0; background: #f3f3f3;
       display: flex; align-items: center; justify-content: center;
-      font-size: 3.2rem; color: #fff;
-      box-shadow: 0 4px 24px rgba(124,58,237,0.2);
+      font-size: 44px;
     }
-    .hero-text h1 {
-      font-size: 2.1rem; font-weight: 750; color: #2d1b4e;
-      margin-bottom: 0.2rem; letter-spacing: -0.02em;
+    .hero-info h1 { font-size: 24px; font-weight: 700; color: #111; margin-bottom: 2px; }
+    .hero-info .role { font-size: 15px; color: #444; margin-bottom: 2px; }
+    .hero-info .affil { font-size: 14px; color: #666; margin-bottom: 10px; line-height: 1.5; }
+    .hero-icons { display: flex; gap: 10px; flex-wrap: wrap; }
+    .hero-icons a {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 13px; color: #555; text-decoration: none;
+      transition: color 0.15s;
     }
-    .hero-text .subtitle { font-size: 1.05rem; color: #7c3aed; font-weight: 500; margin-bottom: 0.5rem; }
-    .hero-text .affiliation { font-size: 0.95rem; color: #6d5c8a; margin-bottom: 0.3rem; line-height: 1.6; }
-    .hero-links { display: flex; gap: 0.75rem; margin-top: 0.85rem; flex-wrap: wrap; }
-    .hero-links a {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.84rem; color: #5b21b6; padding: 0.3rem 0.9rem;
-      border: 1.5px solid #c4b5fd; border-radius: 20px; transition: all 0.25s;
-      background: rgba(255,255,255,0.6);
-    }
-    .hero-links a:hover {
-      border-color: #7c3aed; color: #fff;
-      background: linear-gradient(135deg, #7c3aed, #a855f7);
-      box-shadow: 0 2px 12px rgba(124,58,237,0.25);
-    }
+    .hero-icons a:hover { color: #7c3aed; }
+    .hero-icons .sep { color: #ccc; user-select: none; }
 
-    .hero-bio {
-      max-width: 620px; color: #4a3a65; font-size: 0.95rem; margin-top: 1.5rem;
-    }
+    /* ===== Section ===== */
+    .section { padding: 28px 0; border-top: 1px solid #eee; }
+    .section-title { font-size: 17px; font-weight: 700; color: #111; margin-bottom: 14px; }
 
-    /* ===== Sections ===== */
-    section { padding: 2.8rem 0; border-top: 1px solid #ede4f5; }
-    section:first-of-type { border-top: none; }
-    .section-title {
-      font-size: 1.25rem; font-weight: 700; color: #2d1b4e;
-      margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;
-    }
-    .section-title::before {
-      content: ""; display: inline-block;
-      width: 4px; height: 1.3em;
-      background: linear-gradient(180deg, #7c3aed, #a855f7);
-      border-radius: 2px;
-    }
+    /* ===== Bio ===== */
+    .bio p { color: #333; max-width: 560px; }
 
-    /* ===== Cards ===== */
-    .card {
-      background: #fff;
-      border: 1px solid #ede4f5;
-      border-radius: 12px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.25rem;
-      transition: box-shadow 0.25s, transform 0.25s;
-    }
-    .card:last-child { margin-bottom: 0; }
-    .card:hover {
-      box-shadow: 0 4px 24px rgba(124,58,237,0.08);
-      transform: translateY(-1px);
-    }
+    /* ===== News ===== */
+    .news-list { list-style: none; }
+    .news-list li { display: flex; gap: 12px; margin-bottom: 7px; font-size: 14px; }
+    .news-date { color: #999; flex-shrink: 0; min-width: 82px; font-variant-numeric: tabular-nums; }
+    .news-text { color: #333; }
 
     /* ===== Items ===== */
-    .item { margin-bottom: 1.75rem; }
+    .item { margin-bottom: 20px; }
     .item:last-child { margin-bottom: 0; }
-    .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.25rem; }
-    .item-title { font-weight: 650; font-size: 1rem; color: #2d1b4e; }
-    .item-date {
-      font-size: 0.8rem; color: #a78bfa; white-space: nowrap;
-      background: #f5f0ff; padding: 0.15rem 0.65rem; border-radius: 12px;
-      font-weight: 500;
+    .item-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 1px; }
+    .item-name { font-weight: 650; font-size: 15px; color: #111; }
+    .item-period { font-size: 13px; color: #999; white-space: nowrap; }
+    .item-sub { font-size: 14px; color: #555; margin-bottom: 4px; }
+    .item-body { font-size: 14px; color: #444; }
+    .item-body ul { padding-left: 18px; }
+    .item-body li { margin-bottom: 2px; }
+    .item-body li::marker { color: #999; }
+
+    /* ===== Publications / Patent ===== */
+    .pub { margin-bottom: 16px; font-size: 14px; }
+    .pub:last-child { margin-bottom: 0; }
+    .pub-title { font-weight: 650; color: #111; }
+    .pub-meta { color: #666; font-size: 13px; margin-top: 2px; }
+    .pub-badge {
+      display: inline-block; font-size: 11px; background: #f4edfc; color: #7c3aed;
+      padding: 1px 8px; border-radius: 10px; margin-left: 6px; font-weight: 500;
     }
-    .item-subtitle { font-size: 0.9rem; color: #6d5c8a; margin-bottom: 0.4rem; }
-    .item-desc { font-size: 0.9rem; color: #4a3a65; }
-    .item-desc ul { padding-left: 1.25rem; }
-    .item-desc li { margin-bottom: 0.3rem; }
-    .item-desc li::marker { color: #a78bfa; }
 
     /* ===== Skills ===== */
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-tag {
-      font-size: 0.85rem; padding: 0.35rem 1rem;
-      border-radius: 20px; font-weight: 500;
-      background: linear-gradient(135deg, #f5f0ff, #ede4fd);
-      color: #5b21b6;
-      transition: all 0.2s;
+    .skill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .skill-chip {
+      font-size: 13px; padding: 3px 12px;
+      background: #f5f5f5; border-radius: 14px; color: #444;
     }
-    .skill-tag:hover {
-      background: linear-gradient(135deg, #7c3aed, #a855f7);
-      color: #fff; cursor: default;
-    }
-
-    /* ===== Patent ===== */
-    .patent-box {
-      background: linear-gradient(135deg, #fdfbff, #f5f0ff);
-      border: 1.5px solid #c4b5fd;
-      border-radius: 12px;
-      padding: 1.5rem 1.75rem;
-    }
-    .patent-box .item-title { font-size: 0.95rem; }
-    .patent-meta { font-size: 0.8rem; color: #8b7aa8; margin-top: 0.5rem; }
 
     /* ===== Footer ===== */
     footer {
-      text-align: center; padding: 2.5rem 0;
-      border-top: 1px solid #ede4f5;
-      font-size: 0.8rem; color: #aa9bbd;
-      background: linear-gradient(180deg, #faf8fd, #f5f0ff);
+      text-align: center; padding: 32px 0;
+      border-top: 1px solid #eee;
+      font-size: 12px; color: #aaa;
     }
 
+    /* ===== Links ===== */
+    a { color: #7c3aed; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
     /* ===== Mobile ===== */
-    @media (max-width: 640px) {
+    @media (max-width: 600px) {
       .hero { flex-direction: column; align-items: center; text-align: center; }
-      .hero-text h1 { font-size: 1.6rem; }
-      .nav-links { gap: 1rem; }
-      .nav-links a { font-size: 0.8rem; }
-      .item-header { flex-direction: column; }
-      .hero-section { padding: 5rem 0 2rem; }
+      .hero-icons { justify-content: center; }
+      .bio p { max-width: 100%; }
+      .item-head { flex-direction: column; }
+      .nav-links { gap: 14px; }
     }
   </style>
 </head>
 <body>
 
-<!-- Navigation -->
 <nav class="nav">
   <div class="nav-inner">
     <span class="nav-name">Bohan Wang</span>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#bio">About</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Hero -->
-<div class="hero-section">
-  <div class="container">
-    <div id="about" class="hero">
-      <!-- Replace src with your photo -->
-      <div class="hero-avatar" aria-label="Profile photo placeholder">&#128104;&#8205;&#127891;</div>
-      <div class="hero-text">
-        <h1>Bohan Wang</h1>
-        <p class="subtitle">Undergraduate Student — Financial Mathematics</p>
-        <p class="affiliation">
-          School of Mathematical Sciences, Tongji University<br>
-          Shanghai, China
-        </p>
-        <div class="hero-links">
-          <a href="mailto:3077242053@qq.com">&#9993; Email</a>
-          <a href="#">&#128209; CV</a>
-          <!-- Add: Google Scholar, GitHub, LinkedIn, etc. -->
-        </div>
+<div class="wrapper">
+
+  <!-- ===== Hero ===== -->
+  <div class="hero">
+    <!-- Replace src with your photo: <img class="hero-photo" src="photo.jpg" alt="Bohan Wang"> -->
+    <div class="hero-photo">&#128104;&#8205;&#127891;</div>
+    <div class="hero-info">
+      <h1>Bohan Wang</h1>
+      <p class="role">Undergraduate — Financial Mathematics</p>
+      <p class="affil">
+        School of Mathematical Sciences, Tongji University<br>
+        Shanghai, China
+      </p>
+      <div class="hero-icons">
+        <a href="mailto:3077242053@qq.com">&#9993; Email</a>
+        <span class="sep">/</span>
+        <a href="CV_WangBohan.pdf">&#128196; CV</a>
+        <span class="sep">/</span>
+        <a href="#">&#128279; Google Scholar</a>
+        <span class="sep">/</span>
+        <a href="#">&#9000; GitHub</a>
+        <!-- Add more as needed: ORCID, LinkedIn, Twitter/X -->
       </div>
     </div>
-    <p class="hero-bio">
-      I am an undergraduate student in Financial Mathematics at Tongji University, with research interests in
-      quantitative modeling, carbon market mechanisms, and machine learning for policy analysis. I enjoy
-      bridging mathematical rigor with real-world problems in environmental economics and energy systems.
-    </p>
   </div>
-</div>
 
-<main class="container">
+  <!-- ===== Bio ===== -->
+  <section id="bio" class="section">
+    <h2 class="section-title">About</h2>
+    <div class="bio">
+      <p>
+        I am an undergraduate student in Financial Mathematics at Tongji University.
+        My research interests lie in quantitative modeling, carbon market mechanisms,
+        and applying machine learning to environmental policy analysis.
+        I aim to bridge mathematical rigor with real-world challenges in
+        environmental economics and energy systems.
+      </p>
+    </div>
+  </section>
 
-  <!-- Education -->
-  <section id="education">
+  <!-- ===== News ===== -->
+  <section id="news" class="section">
+    <h2 class="section-title">News</h2>
+    <ul class="news-list">
+      <li>
+        <span class="news-date">2026</span>
+        <span class="news-text">Invention patent accepted: "A Method and Equipment for Hierarchical Coordinated Control of Active and Reactive Power in New Energy Stations" (No. 202610462312.7).</span>
+      </li>
+      <li>
+        <span class="news-date">Mar. 2026</span>
+        <span class="news-text">Completed final defense for the Global Carbon Market project before expert reviewers.</span>
+      </li>
+      <li>
+        <span class="news-date">Jan. 2026</span>
+        <span class="news-text">Started FinTech internship at Ningxia Bank Head Office.</span>
+      </li>
+      <li>
+        <span class="news-date">Feb. 2025</span>
+        <span class="news-text">Joined the School of Environmental Science &amp; Engineering as a Research Assistant under Prof. Bin Xu.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== Education ===== -->
+  <section id="education" class="section">
     <h2 class="section-title">Education</h2>
-    <div class="card">
-      <div class="item-header">
-        <span class="item-title">B.S. in Financial Mathematics (Double Degree Program)</span>
-        <span class="item-date">Aug. 2024 – Jun. 2028</span>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">B.S. in Financial Mathematics (Double Degree Program)</span>
+        <span class="item-period">2024 – 2028 (Expected)</span>
       </div>
-      <p class="item-subtitle">Tongji University, Shanghai, China</p>
-      <div class="item-desc">
-        <p><strong>Relevant Coursework:</strong> Stochastic Processes, Econometrics, Financial Derivatives,
-        Mathematical Statistics, Data Structures &amp; Algorithms, Linear Algebra</p>
+      <p class="item-sub">Tongji University, Shanghai, China</p>
+      <div class="item-body">
+        <strong>Relevant Coursework:</strong> Stochastic Processes, Econometrics, Financial Derivatives,
+        Mathematical Statistics, Data Structures &amp; Algorithms, Linear Algebra.
       </div>
     </div>
   </section>
 
-  <!-- Research -->
-  <section id="research">
+  <!-- ===== Research ===== -->
+  <section id="research" class="section">
     <h2 class="section-title">Research Experience</h2>
-    <div class="card">
-      <div class="item-header">
-        <span class="item-title">Global Carbon Market Comprehensive Assessment &amp; Idealized Framework Design</span>
-        <span class="item-date">Feb. 2025 – Mar. 2026</span>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Global Carbon Market Comprehensive Assessment &amp; Idealized Framework Design</span>
+        <span class="item-period">Feb. 2025 – Mar. 2026</span>
       </div>
-      <p class="item-subtitle">Research Assistant — School of Environmental Science &amp; Engineering, Tongji University
-      <br>Supervisor: Prof. Bin Xu</p>
-      <div class="item-desc">
+      <p class="item-sub">Research Assistant, School of Environmental Science &amp; Engineering, Tongji University — Supervisor: Prof. Bin Xu</p>
+      <div class="item-body">
         <ul>
           <li>Independently shouldered all research responsibilities after initial team withdrawal; completed the project through final defense.</li>
-          <li>Collected, cleaned, and structured large-scale cross-national datasets covering major Emissions Trading Systems (EU ETS, California Cap-and-Trade, China National ETS, RGGI, and others).</li>
-          <li>Conducted comparative policy analysis of carbon allowance mechanisms across 10+ economies, evaluating emission-reduction efficiency, market liquidity, and price discovery performance.</li>
-          <li>Built a quantitative idealized carbon market framework (Carbon AI) incorporating mathematical modeling and machine learning for carbon price forecasting.</li>
-          <li>Authored multiple interim progress reports and the full mid-term review; delivered a well-received final defense presentation before expert reviewers.</li>
+          <li>Collected and structured cross-national datasets covering major Emissions Trading Systems (EU ETS, California Cap-and-Trade, China National ETS, RGGI, etc.).</li>
+          <li>Conducted comparative policy analysis of carbon allowance mechanisms across 10+ economies, evaluating emission-reduction efficiency, market liquidity, and price discovery.</li>
+          <li>Built a quantitative idealized carbon market framework (Carbon AI) combining mathematical modeling and machine learning for carbon price forecasting.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Intellectual Property -->
-  <section id="patents">
-    <h2 class="section-title">Intellectual Property</h2>
-    <div class="patent-box">
-      <div class="item-header">
-        <span class="item-title">"A Method and Equipment for Hierarchical Coordinated Control of Active and Reactive Power in New Energy Stations"</span>
-        <span class="item-date">2026</span>
+  <!-- ===== Publications ===== -->
+  <section id="publications" class="section">
+    <h2 class="section-title">Publications &amp; Patents</h2>
+    <div class="pub">
+      <div class="pub-title">
+        A Method and Equipment for Hierarchical Coordinated Control of Active and Reactive Power in New Energy Stations
+        <span class="pub-badge">Patent (Accepted)</span>
       </div>
-      <p class="patent-meta">
-        Invention Patent (Accepted) · Application No. 202610462312.7 · National Intellectual Property Administration of China
-      </p>
-      <div class="item-desc" style="margin-top: 0.5rem;">
-        Contributed to algorithm design and simulation verification of the hierarchical active/reactive power coordination scheme; authored the patent application materials.
+      <div class="pub-meta">
+        2026 · Application No. 202610462312.7 · National Intellectual Property Administration of China
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience">
+  <!-- ===== Experience ===== -->
+  <section id="experience" class="section">
     <h2 class="section-title">Professional &amp; Campus Experience</h2>
-    <div class="card">
-      <div class="item-header">
-        <span class="item-title">Financial Technology Intern — Ningxia Bank Head Office</span>
-        <span class="item-date">Jan. 2026 – Mar. 2026</span>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Financial Technology Intern — Ningxia Bank Head Office</span>
+        <span class="item-period">Jan. 2026 – Mar. 2026</span>
       </div>
-      <p class="item-subtitle">FinTech Department</p>
-      <div class="item-desc">
+      <p class="item-sub">FinTech Department</p>
+      <div class="item-body">
         <ul>
           <li>Assisted in building an internal AI-powered knowledge base Q&A system using the Dify platform.</li>
-          <li>Cleaned and structured financial policy documents, credit product materials, and regulatory texts to improve knowledge retrieval accuracy.</li>
-          <li>Supported pilot deployment of AI tools across internal business scenarios, improving employee information query efficiency.</li>
+          <li>Cleaned and structured financial policy documents and regulatory texts for knowledge retrieval.</li>
+          <li>Supported pilot deployment of AI tools across internal business scenarios.</li>
         </ul>
       </div>
     </div>
-    <div class="card">
-      <div class="item-header">
-        <span class="item-title">Member &amp; National Level-3 Football Referee — Tongji University Football Association</span>
-        <span class="item-date">Sep. 2024 – Present</span>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Member &amp; National Level-3 Football Referee — Tongji University Football Association</span>
+        <span class="item-period">Sep. 2024 – Present</span>
       </div>
-      <div class="item-desc">
+      <div class="item-body">
         <ul>
           <li>Officiated on-campus match events; responsible for rule interpretation and real-time decision-making under pressure.</li>
           <li>Participated in event organization and coordination.</li>
@@ -305,36 +278,30 @@
     </div>
   </section>
 
-  <!-- Skills & Languages -->
-  <section id="skills">
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="section">
     <h2 class="section-title">Skills &amp; Languages</h2>
-    <div class="card">
-      <div style="margin-bottom: 1.25rem;">
-        <h3 style="font-size: 0.92rem; font-weight: 650; color: #5b21b6; margin-bottom: 0.6rem;">Technical</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">LaTeX</span>
-          <span class="skill-tag">R</span>
-          <span class="skill-tag">Excel (Advanced)</span>
-          <span class="skill-tag">Quantitative Modeling</span>
-          <span class="skill-tag">Data Cleaning &amp; Analysis</span>
-          <span class="skill-tag">Machine Learning</span>
-        </div>
-      </div>
-      <div>
-        <h3 style="font-size: 0.92rem; font-weight: 650; color: #5b21b6; margin-bottom: 0.6rem;">Languages</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Mandarin Chinese (Native)</span>
-          <span class="skill-tag">English — TOEFL 5.0/6.0</span>
-        </div>
-      </div>
+    <p style="font-size:13px;color:#777;margin-bottom:10px;">Technical</p>
+    <div class="skill-row">
+      <span class="skill-chip">Python</span>
+      <span class="skill-chip">LaTeX</span>
+      <span class="skill-chip">R</span>
+      <span class="skill-chip">Excel (Advanced)</span>
+      <span class="skill-chip">Quantitative Modeling</span>
+      <span class="skill-chip">Data Cleaning &amp; Analysis</span>
+      <span class="skill-chip">Machine Learning</span>
+    </div>
+    <p style="font-size:13px;color:#777;margin-bottom:10px;">Languages</p>
+    <div class="skill-row">
+      <span class="skill-chip">Mandarin Chinese (Native)</span>
+      <span class="skill-chip">English (TOEFL 5.0/6.0)</span>
     </div>
   </section>
 
-</main>
+</div>
 
 <footer>
-  <p>&copy; 2026 Bohan Wang</p>
+  &copy; 2026 Bohan Wang
 </footer>
 
 </body>
